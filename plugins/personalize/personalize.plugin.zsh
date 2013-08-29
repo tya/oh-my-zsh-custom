@@ -5,17 +5,8 @@
 #
 ################################################################################
 
-init() {
+personalize() {
     PERSONALIZE=$ZSH_CUSTOM/plugins/personalize
-    
-    if [ -d ${HOME}/bin ]; then
-        export PATH=${HOME}/bin:${PATH}
-    fi
-    
-    if [ -d /usr/local/share/npm/bin ]; then
-        export PATH=/usr/local/share/npm/bin:${PATH}
-    fi
-    
     directories=(default os local)
     for d in $directories; do
         for f ($PERSONALIZE/$d/*.zsh(N)); do
@@ -24,8 +15,6 @@ init() {
     done
     unset d
     unset f
-
-    setjavadefault
 }
 
 #############################################################################
@@ -106,4 +95,4 @@ nodebug () {
     export MAVEN_OPTS="-Xmx2048m -Xms1024m"
 }
 
-init
+personalize
