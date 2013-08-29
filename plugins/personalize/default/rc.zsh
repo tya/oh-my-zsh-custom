@@ -20,6 +20,9 @@ fi
 
 # load zsh auto-completion
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+# load the grc colorization aliases
+source "`brew --prefix grc`/etc/grc.bashrc"
     
 
 #############################################################################
