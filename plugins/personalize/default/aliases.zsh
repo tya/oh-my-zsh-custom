@@ -99,3 +99,10 @@ alias gitff="git flow feature"
 #############################################################################
 alias mvnpre='mvn release:prepare'
 alias mvnperf='mvn -Darguments="-DskipTests" release:perform'
+
+#############################################################################
+# redis and/or memcache aliases
+#############################################################################
+alias flushb='redis-cli flushall && echo flush_all | nc localhost 11211'
+alias flushr='redis-cli flushall'
+alias flushmc='echo flush_all | nc localhost 11211'
