@@ -75,7 +75,7 @@ export HG_SANDBOX=${HOME}/hg-sandbox
 #############################################################################
 # setup python path
 #############################################################################
-#export PYTHONPATH=/Users/ty/sandbox/python-beatport:/Users/ty/sandbox/python-bphg
+export PYENV=2.7.5
 
 
 #############################################################################
