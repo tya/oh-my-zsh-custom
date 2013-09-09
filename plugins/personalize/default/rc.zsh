@@ -36,7 +36,7 @@ setjavadefault
 #############################################################################
 if [[ ! -z ${PYENV} ]]; then
     if [ -d ${HOME}/.pyenv/${PYENV} ]; then 
-	source ${HOME}/.pyenv/2.7.5
+	source ${HOME}/.pyenv/2.7.5/bin/activate
     fi
 fi
 
