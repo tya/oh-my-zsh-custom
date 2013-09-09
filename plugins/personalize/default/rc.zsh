@@ -48,3 +48,9 @@ fi
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)";
 fi
+
+
+#############################################################################
+# add ssh key to ssh-agent (once)
+#############################################################################
+ssh-add -l &> /dev/null || ssh-add &> /dev/null
