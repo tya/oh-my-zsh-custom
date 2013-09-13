@@ -14,10 +14,6 @@ if [ -d ${HOME}/bin ]; then
     export PATH=${HOME}/bin:${PATH}
 fi
 
-if [ -d /usr/local/share/npm/bin ]; then
-    export PATH=/usr/local/share/npm/bin:${PATH}
-fi
-
 # load zsh auto-completion
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -44,9 +40,23 @@ fi
 #############################################################################
 # ruby setup
 #############################################################################
+if [ -d ${HOME}/.rbenv/bin ]; then
+    export PATH=${HOME}/.rbenv/bin:${PATH}
+fi
+
+
 # rbenv setup
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)";
+fi
+
+
+
+#############################################################################
+# nodejs/npm setup
+#############################################################################
+if [ -d /usr/local/share/npm/bin ]; then
+    export PATH=/usr/local/share/npm/bin:${PATH}
 fi
 
 
