@@ -25,29 +25,33 @@ source "`brew --prefix grc`/etc/grc.bashrc"
 # java setup
 #############################################################################
 setjavadefault
-
+nojavadebug
 
 #############################################################################
 # python setup
 #############################################################################
-if [[ ! -z ${PYENV} ]]; then
-    if [ -d ${HOME}/.pyenv/${PYENV} ]; then 
-	source ${HOME}/.pyenv/2.7.5/bin/activate
-    fi
+if [ -d ${PYENV_ROOT}/bin ]; then
+    export PATH=${PYENV_ROOT}/bin:${PATH}
+fi
+
+
+# pyenv setup
+if which pyenv > /dev/null; then 
+    eval "$(pyenv init -)"
 fi
 
 
 #############################################################################
 # ruby setup
 #############################################################################
-if [ -d ${HOME}/.rbenv/bin ]; then
-    export PATH=${HOME}/.rbenv/bin:${PATH}
+if [ -d ${RBENV_ROOT}/bin ]; then
+    export PATH=${RBENV_ROOT}/bin:${PATH}
 fi
 
 
 # rbenv setup
 if which rbenv > /dev/null; then 
-    eval "$(rbenv init -)";
+    eval "$(rbenv init -)"
 fi
 
 

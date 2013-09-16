@@ -80,18 +80,19 @@ setjava6 () {
 
 
 #############################################################################
-# Function setdebug
-# usage: setdebug
+# Function setjavadebug
+# usage: setjavadebug
 #############################################################################
-setdebug () {
+setjavadebug () {
     export MAVEN_OPTS="-Xmx2048m -Xms1024m -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n"
 }
 
+
 #############################################################################
-# Function nodebug
-# usage: nodebug
+# Function nojavadebug
+# usage: nojavadebug
 #############################################################################
-nodebug () {
+nojavadebug () {
     export MAVEN_OPTS="-Xmx2048m -Xms1024m"
 }
 
