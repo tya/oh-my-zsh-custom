@@ -10,6 +10,7 @@
 #############################################################################
 if [[ "$OS" == 'osx' ]]; then
     alias emacs='open -a Emacs'
+    alias st='open -a SourceTree'
 fi
 
 
