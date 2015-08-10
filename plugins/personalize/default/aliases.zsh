@@ -75,12 +75,18 @@ alias sudo='sudo '
 # manpage: A trailing space in value causes the next word to be checked for
 #          alias substitution when the alias is expanded
 
+alias thorttled=throttled
+
+#############################################################################
+# Vim alias
+#############################################################################
+# light vim
+alias lvim="vim -c set\ background=light"
 
 #############################################################################
 # scm aliases
 #############################################################################
 alias rmorig='find . -type f -name "*.orig" -delete'
-
 
 #############################################################################
 # git scm aliases
@@ -88,11 +94,18 @@ alias rmorig='find . -type f -name "*.orig" -delete'
 alias gf="git fetch"
 alias gs="git st"
 alias gl="git log -n 5"
+alias gc="git commit"
 
 alias gitf="git flow"
 alias gff="git flow feature"
 alias gitff="git flow feature"
 
+#############################################################################
+# docker aliases
+#############################################################################
+alias doc='docker-compose'
+alias com='docker-compose'
+alias mac='docker-machine'
 
 #############################################################################
 # maven aliases

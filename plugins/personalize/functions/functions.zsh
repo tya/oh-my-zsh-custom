@@ -17,12 +17,20 @@ function itab {
 # Function cleanpath
 # remove duplicates in PATH, but keep the order
 # usage:  cleanpath
-# 
+#
 #############################################################################
 function cleanpath {
     PATH="$(printf "%s" "${PATH}" | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')"
     PATH="${PATH%:}"  # remove trailing colon
     export PATH
+}
+
+#############################################################################
+# Function ddig (docker dig)
+# usage: ddig
+#############################################################################
+function ddig {
+    dig @$(boot2docker ip) $@.docker +search +short
 }
 
 #############################################################################
@@ -39,7 +47,7 @@ function setjava5 {
 # usage: setjava6
 #############################################################################
 function setjava6 {
-    [ -d $JAVA_HOME_6 ] && export JAVA_HOME=$JAVA_HOME_6 
+    [ -d $JAVA_HOME_6 ] && export JAVA_HOME=$JAVA_HOME_6
 }
 
 
@@ -58,3 +66,12 @@ function setdebug {
 function nodebug {
     export MAVEN_OPTS="-Xmx2048m -Xms1024m"
 }
+
+#############################################################################
+# Function nodebug
+# usage: nodebug
+#############################################################################
+function route2docker {
+    sudo route -n add 172.17.0.0/16 $(boot2docker ip)
+}
+

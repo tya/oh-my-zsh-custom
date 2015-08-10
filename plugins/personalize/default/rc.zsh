@@ -18,7 +18,7 @@ fi
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # load the grc colorization aliases
-source "`brew --prefix grc`/etc/grc.bashrc"
+#source "`brew --prefix grc`/etc/grc.bashrc"
 
 
 #############################################################################
@@ -30,4 +30,6 @@ nojavadebug
 #############################################################################
 # add ssh key to ssh-agent (once)
 #############################################################################
-ssh-add -l &> /dev/null || ssh-add &> /dev/null
+#ssh-add -l &> /dev/null || ssh-add &> /dev/null
+
+cleanpath
