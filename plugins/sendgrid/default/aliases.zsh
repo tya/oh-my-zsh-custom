@@ -13,4 +13,4 @@
 ## * uptime CLI tool is ss (see uptime.sendgrid.net)
 ## SOLUTION: unalias zsh plugin alias off ss
 ##############################################################################
-unalias ss
+#unalias ss
