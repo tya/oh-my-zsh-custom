@@ -2,34 +2,28 @@
 #############################################################################
 # FILE: rc.zsh
 #
-# This file loads Ty's zsh run control.
+# This file loads Ty's global zsh run control.
 #
 #############################################################################
 
 #############################################################################
-# zsh setup
+# path setup
 #############################################################################
-# add to path
 if [ -d ${HOME}/bin ]; then
     export PATH=${HOME}/bin:${PATH}
 fi
 
-# load zsh auto-completion
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# load the grc colorization aliases
-#source "`brew --prefix grc`/etc/grc.bashrc"
+if [ -d ${HOME}/.anyenv/bin ]; then
+    export PATH=${HOME}/.anyenv/bin:${PATH}
+fi
 
 
 #############################################################################
-# java setup
+# anyenv setup
 #############################################################################
-setjavadefault
-nojavadebug
+eval "$(anyenv init -)"
 
 #############################################################################
-# add ssh key to ssh-agent (once)
+# github setup
 #############################################################################
-#ssh-add -l &> /dev/null || ssh-add &> /dev/null
-
-cleanpath
+eval "$(hub alias -s)"

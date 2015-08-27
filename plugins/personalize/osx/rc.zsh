@@ -2,20 +2,23 @@
 #############################################################################
 # FILE: rc.zsh
 #
-# This file loads sendgrid zsh run control.
+# This file loads Ty's OSX zsh run control.
 #
 #############################################################################
 
 #############################################################################
-# chefdk setup
+# zsh setup
 #############################################################################
-eval "$(chef shell-init zsh)"
+# load zsh auto-completion
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 #############################################################################
-# setup boot2docker
+# java setup
 #############################################################################
-# To reload boot2docker after an upgrade:
-#   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
-#   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist
-#[[ $(boot2docker status) == "running" ]] && $(boot2docker shellinit 2>/dev/null)
-#$(boot2docker shellinit 2>/dev/null)
+#setjavadefault
+#nojavadebug
+
+#############################################################################
+# add ssh key to ssh-agent (once)
+#############################################################################
+#ssh-add -l &> /dev/null || ssh-add &> /dev/null

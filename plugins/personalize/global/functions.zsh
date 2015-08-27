@@ -1,17 +1,9 @@
 ############################################################################
 # FILE: functions.zsh
 #
-# This file loads Ty's zsh functions
+# This file loads Ty's global zsh functions
 #
 #############################################################################
-
-#############################################################################
-# function: itab  (name an iterm tab)
-# usage itab <name>
-#############################################################################
-function itab {
-    echo -ne "\033]0;"$@"\007"
-}
 
 #############################################################################
 # Function cleanpath
@@ -27,10 +19,19 @@ function cleanpath {
 
 #############################################################################
 # Function ddig (docker dig)
-# usage: ddig
+# usage: ddig <machine_name> <lookup_pattern>
 #############################################################################
 function ddig {
-    dig @$(boot2docker ip) $@.docker +search +short
+    local machine_name=$1 ; shift
+    dig @$(docker-machine ip $machine) $@.docker +search +short
+}
+
+#############################################################################
+# Function setjavadefault
+# usage: setjavadefault
+#############################################################################
+function setjavadefault {
+    [ -d $JAVA_HOME_DEFAULT ] && export JAVA_HOME=$JAVA_HOME_DEFAULT
 }
 
 #############################################################################
@@ -39,7 +40,6 @@ function ddig {
 #############################################################################
 function setjava5 {
     [ -d $JAVA_HOME_5 ] && export JAVA_HOME=$JAVA_HOME_5
-    echo JAVA_HOME=$JAVA_HOME
 }
 
 #############################################################################
@@ -50,28 +50,18 @@ function setjava6 {
     [ -d $JAVA_HOME_6 ] && export JAVA_HOME=$JAVA_HOME_6
 }
 
-
 #############################################################################
-# Function setdebug
-# usage: setdebug
+# Function setjavadebug
+# usage: setjavadebug
 #############################################################################
-function setdebug {
+function setjavadebug {
     export MAVEN_OPTS="-Xmx2048m -Xms1024m -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n"
 }
 
 #############################################################################
-# Function nodebug
-# usage: nodebug
+# Function nojavadebug
+# usage: nojavadebug
 #############################################################################
-function nodebug {
+function nojavadebug {
     export MAVEN_OPTS="-Xmx2048m -Xms1024m"
 }
-
-#############################################################################
-# Function nodebug
-# usage: nodebug
-#############################################################################
-function route2docker {
-    sudo route -n add 172.17.0.0/16 $(boot2docker ip)
-}
-

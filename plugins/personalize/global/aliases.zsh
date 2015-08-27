@@ -1,107 +1,115 @@
 # -*- mode: sh -*-
 #############################################################################
-# FILE: exports.zsh
+# FILE: aliases.zsh
 #
-# This file loads Ty's zsh exports.
+# This file loads Ty's personalized aliases
 #
 #############################################################################
 
 #############################################################################
-# system info
+# Direcotry movement aliases
 #############################################################################
-ARCHITECTURE=`uname -m`
-PLATFORM=`uname -s`
-OS='unknown'
-
-if [[ "$PLATFORM" == 'Linux' ]]; then
-    OS='linux'
-elif [[ "$PLATFORM" == 'FreeBSD' ]]; then
-    OS='freebsd'
-elif [[ "$PLATFORM" == 'Darwin' ]]; then
-    OS='osx'
-elif [[ "$PLATFORM" == 'SunOS' ]]; then
-    OS='solaris'
-fi
-
-export ARCHITECTURE
-export PLATFORM
-export OS
+alias up="cd ..; echo $PWD"
+alias up2="cd ../..; echo $PWD"
+alias up3="cd ../../..; echo $PWD"
+alias up4="cd ../../../..; echo $PWD"
 
 #############################################################################
-# history
+# ls aliases
 #############################################################################
-export HISTCONTROL=ignoredups
+alias ls="ls -hG"
+alias lll="ls -alhG $1 | less"
+alias llm="ls -alhG $1 | more"
+alias ll="ls -lhG"
+alias la="ls -alhG"
+alias lt="ls -ltG"
 
 #############################################################################
-# editor setup
+# Terminal aliases
 #############################################################################
-export EDITOR=vim
+alias pd=pushd
+alias pop=popd
+alias so=source
 
 #############################################################################
-# grep options
+# Display aliases
 #############################################################################
-export GREP_OPTIONS="--exclude=\*/.svn/\*"
+alias pdis="echo DISPLAY=$DISPLAY"
 
 #############################################################################
-# dropbox/config-repo settings
+# Program shortcut aliases
 #############################################################################
-export LESS="-RFX"
+alias c=clear
+alias h=history
+alias l=less
+alias m=more
+alias lns="ln -s $1"
+alias dirs="dirs -v"
+alias grep="grep --color"
+alias egrep="egrep --color"
+alias fgrep="fgrep --color"
+alias ppath='echo $PATH | tr \: \\n'
 
 #############################################################################
-# sandbox locations
+# Search aliases
 #############################################################################
-export SANDBOX=${HOME}/sandbox
+alias fndenv="env | grep -i $1"
+alias fndcmd="history | grep -i $1"
+alias fenv="env | grep -i $1"
+alias fcmd="history | grep -i $1"
 
 #############################################################################
-# svn setup
+# Typo aliases
 #############################################################################
-export SVN_EDITOR=vim
-export SVN_SANDBOX=${HOME}/svn-sandbox
+alias chomd=chmod
+alias suod=sudo
+
+alias sudo="sudo "
+#(recognize the space!)
+# see http://serverfault.com/questions/61321/how-to-pass-alias-through-sudo
+# manpage: A trailing space in value causes the next word to be checked for
+#          alias substitution when the alias is expanded
 
 #############################################################################
-# git setup
+# Vim alias
 #############################################################################
-export GIT_EDITOR=vim
-export GIT_SANDBOX=${HOME}/git-sandbox
+# light vim
+alias lvim="vim -c set\ background=light"
 
 #############################################################################
-# hg setup
+# scm aliases
 #############################################################################
-export HG_EDITOR=vim
-export HG_SANDBOX=${HOME}/hg-sandbox
+alias rmorig="find . -type f -name \"*.orig\" -delete"
+alias gh="hub browse $@"
 
 #############################################################################
-# go setup
+# git scm aliases
 #############################################################################
-export GOPATH="${HOME}/.gopath"
-export GOBIN="${GOPATH}/bin"
+alias gf="git fetch"
+alias gs="git st"
+alias gl="git log -n 5"
+alias gc="git commit"
+
+alias gitf="git flow"
+alias gff="git flow feature"
+alias gitff="git flow feature"
 
 #############################################################################
-# node.js setup
+# docker aliases
 #############################################################################
-export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+alias doc="docker-compose"
+alias com="docker-compose"
+alias mac="docker-machine"
 
 #############################################################################
-# dropbox/config-repo settings
+# maven aliases
 #############################################################################
-export DROPBOX=${HOME}/Dropbox
-export DROPCONFIG=${DROPBOX}/config
+alias mvnpre="mvn release:prepare"
+alias mvnperf="mvn -Darguments='-DskipTests' release:perform"
 
 #############################################################################
-# elb-tools setup (see brew elb-tools)
+# redis and/or memcache aliases
 #############################################################################
-export AWS_ELB_HOME="/usr/local/Library/LinkedKegs/elb-tools/jars"
-export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars"
-export AWS_AUTO_SCALING_HOME="/usr/local/Library/LinkedKegs/auto-scaling/jars"
-export AWS_ELASTICACHE_HOME="/usr/local/Cellar/aws-elasticache/1.7.000/libexec"
-export AWS_IAM_HOME="/usr/local/opt/aws-iam-tools/jars"
-export AWS_SNS_HOME="/usr/local/Library/LinkedKegs/aws-sns-cli/jars"
-export AWS_CLOUDWATCH_HOME="/usr/local/Library/LinkedKegs/cloud-watch/jars"
-export SERVICE_HOME="$AWS_CLOUDWATCH_HOME"
-export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
-export AWS_RDS_HOME="/usr/local/Cellar/rds-command-line-tools/1.12.002/libexec"
-
-export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem(N) | /usr/bin/head -1)"
-export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem(N) | /usr/bin/head -1)"
-export AWS_CREDENTIAL_FILE="$HOME/.s3cfg"
-
+alias flushb="redis-cli flushall && echo flush_all | nc localhost 11211"
+alias flushr="redis-cli flushall"
+alias flushmc="echo flush_all | nc localhost 11211"
