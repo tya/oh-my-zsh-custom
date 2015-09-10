@@ -9,12 +9,23 @@
 # Function cleanpath
 # remove duplicates in PATH, but keep the order
 # usage:  cleanpath
-#
 #############################################################################
 function cleanpath {
     PATH="$(printf "%s" "${PATH}" | /usr/bin/awk -v RS=: -v ORS=: '!($0 in a) {a[$0]; print}')"
     PATH="${PATH%:}"  # remove trailing colon
     export PATH
+}
+
+#############################################################################
+# Function tynet-upload
+# usage: tynet-upload
+#############################################################################
+function tynet-upload {
+    eval $(chef shell-init zsh) \
+    && knife block tynet \
+    && thor version:bump auto \
+    && berks update \
+    && berks upload
 }
 
 #############################################################################
