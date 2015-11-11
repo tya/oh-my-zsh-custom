@@ -85,10 +85,11 @@ alias gh="hub browse $@"
 #############################################################################
 # git scm aliases
 #############################################################################
-alias gf="git fetch"
+alias gf="git fetch --all"
 alias gs="git st"
 alias gl="git log -n 5"
 alias gc="git commit"
+alias gb='git browse'
 
 alias gitf="git flow"
 alias gff="git flow feature"
