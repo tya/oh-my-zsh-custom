@@ -25,4 +25,6 @@ personalize() {
 }
 
 personalize
+
+# remove duplicates from path
 cleanpath

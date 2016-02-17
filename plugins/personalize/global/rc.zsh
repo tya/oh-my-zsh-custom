@@ -9,14 +9,12 @@
 #############################################################################
 # path setup
 #############################################################################
+if [ -d ${GOBIN} ]; then
+    export PATH=${GOBIN}:${PATH}
+fi
 if [ -d ${HOME}/bin ]; then
     export PATH=${HOME}/bin:${PATH}
 fi
-
-if [ -d ${HOME}/.anyenv/bin ]; then
-    export PATH=${HOME}/.anyenv/bin:${PATH}
-fi
-
 
 #############################################################################
 # anyenv setup

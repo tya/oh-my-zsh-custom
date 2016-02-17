@@ -32,11 +32,6 @@ alias pop=popd
 alias so=source
 
 #############################################################################
-# Display aliases
-#############################################################################
-alias pdis="echo DISPLAY=$DISPLAY"
-
-#############################################################################
 # Program shortcut aliases
 #############################################################################
 alias c=clear
@@ -55,8 +50,6 @@ alias ppath='echo $PATH | tr \: \\n'
 #############################################################################
 alias fndenv="env | grep -i $1"
 alias fndcmd="history | grep -i $1"
-alias fenv="env | grep -i $1"
-alias fcmd="history | grep -i $1"
 
 #############################################################################
 # Typo aliases
@@ -80,7 +73,6 @@ alias lvim="vim -c set\ background=light"
 # scm aliases
 #############################################################################
 alias rmorig="find . -type f -name \"*.orig\" -delete"
-alias gh="hub browse $@"
 
 #############################################################################
 # git scm aliases
@@ -88,29 +80,15 @@ alias gh="hub browse $@"
 alias gf="git fetch --all"
 alias gs="git st"
 alias gl="git log -n 5"
-alias gc="git commit"
-alias gb='git browse'
-
-alias gitf="git flow"
-alias gff="git flow feature"
-alias gitff="git flow feature"
+alias gh="hub browse $@"
 
 #############################################################################
 # docker aliases
 #############################################################################
 alias doc="docker-compose"
-alias com="docker-compose"
 alias mac="docker-machine"
 
 #############################################################################
-# maven aliases
+# golang shortcut
 #############################################################################
-alias mvnpre="mvn release:prepare"
-alias mvnperf="mvn -Darguments='-DskipTests' release:perform"
-
-#############################################################################
-# redis and/or memcache aliases
-#############################################################################
-alias flushb="redis-cli flushall && echo flush_all | nc localhost 11211"
-alias flushr="redis-cli flushall"
-alias flushmc="echo flush_all | nc localhost 11211"
+alias tya='cd $GOPATH/src/github.com/tya'
