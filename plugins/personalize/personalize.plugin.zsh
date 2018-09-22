@@ -22,6 +22,11 @@ personalize() {
   for f ($PERSONALIZE/sendgrid/*.zsh(N)); do
     source $f
   done
+
+  # load sendgrid settings
+  for f ($HOME/.sendgrid/*.zsh(N)); do
+    source $f
+  done
 }
 
 personalize
