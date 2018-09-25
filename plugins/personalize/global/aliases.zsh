@@ -92,3 +92,9 @@ alias mac="docker-machine"
 # golang shortcut
 #############################################################################
 alias tya='cd $GOPATH/src/github.com/tya'
+
+#############################################################################
+# cfg dotfile shortcut
+#############################################################################
+alias cg='/usr/bin/git --git-dir=$HOME/.cg/ --work-tree=$HOME'
+alias cgs='cg status'
