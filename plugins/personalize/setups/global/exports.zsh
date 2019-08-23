@@ -35,4 +35,10 @@ export LESS="-RFX"
 #############################################################################
 export GOPATH="${HOME}/.gopath"
 export GOBIN="${GOPATH}/bin"
-#export GOROOT="${GOENV_ROOT}/versions/$(goenv version)"
+export GOROOT="${GOENV_ROOT}/versions/$(goenv version | cut -f1 -d' ')"
+export GOENV_DISABLE_GOPATH=1
+
+#############################################################################
+# AWS SAM stuff
+#############################################################################
+export SAM_CLI_TELEMETRY=0

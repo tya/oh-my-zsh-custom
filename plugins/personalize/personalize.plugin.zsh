@@ -10,7 +10,7 @@ personalize() {
 
   # source setups
   setups="${PERSONALIZE_HOME}/setups"
-  for setup in $(find "${setups}" -iname "*.zsh"); do
+  for setup in $(find "${setups}" -iname "*.zsh" | sort -r); do
     source "${setup}"
   done
 }
