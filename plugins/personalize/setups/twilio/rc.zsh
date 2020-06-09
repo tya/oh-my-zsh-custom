@@ -9,3 +9,6 @@
 for f ($HOME/.twilio/*.zsh(N)); do
   source $f
 done
+
+# load owl settings
+eval "$("$OWL/bin/owl" init -)"
