@@ -1,8 +1,11 @@
 # -*- mode: sh -*-
 #############################################################################
-# FILE: exports.zsh
+# FILE: rc.zsh
 #
-# This file loads sendgrid exports.
+# This file loads twilio zsh run control.
 #
 #############################################################################
-export SENDGRID=${HOME}/git-sg
+# load twilio settings (don't want to keep these in public github)
+for f ($HOME/.twilio/*.zsh(N)); do
+  source $f
+done

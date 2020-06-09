@@ -9,6 +9,9 @@
 #############################################################################
 # path setup
 #############################################################################
+if [ -d /usr/local/sbin ]; then
+    export PATH=/usr/local/sbin:${PATH}
+fi
 if [ -d ${GOBIN} ]; then
     export PATH=${GOBIN}:${PATH}
 fi

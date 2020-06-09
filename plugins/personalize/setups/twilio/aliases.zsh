@@ -2,13 +2,13 @@
 #############################################################################
 # FILE: aliases.zsh
 #
-# This file loads sendgrid aliases
+# This file loads twilio aliases
 #
 #############################################################################
-alias sg='cd $GOPATH/src/github.com/sendgrid'
-alias sgo='cd $GOPATH/src/github.com/sendgrid'
-alias gosg='cd $GOPATH/src/github.com/sendgrid'
+alias tw='cd $GOPATH/src/github.com/twilio'
+alias two='cd $GOPATH/src/github.com/twilio'
+alias gotw='cd $GOPATH/src/github.com/twilio'
 
 # branch shortcut
-alias sgb="git checkout -b EVE-$1"
+alias twb="git checkout -b ESF-$1"
 

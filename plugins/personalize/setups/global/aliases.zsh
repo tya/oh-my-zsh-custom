@@ -32,6 +32,12 @@ alias pop=popd
 alias so=source
 
 #############################################################################
+# Personal github code directories
+#############################################################################
+alias tya='cd $GOPATH/src/github.com/tya'
+alias tynet94='cd $GOPATH/src/github.com/tynet94'
+
+#############################################################################
 # Program shortcut aliases
 #############################################################################
 alias c=clear

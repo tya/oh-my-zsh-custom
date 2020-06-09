@@ -2,7 +2,7 @@
 #############################################################################
 # FILE: exports.zsh
 #
-# This file loads sendgrid exports.
+# This file loads twilio exports.
 #
 #############################################################################
-export SENDGRID=${HOME}/git-sg
+export OWL=${HOME}/code/owl
