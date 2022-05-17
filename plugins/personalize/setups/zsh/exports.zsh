@@ -31,11 +31,16 @@ export EDITOR=vim
 export LESS="-RFX"
 
 #############################################################################
+# goenv setup
+#############################################################################
+export GOENV_BIN="/Users/ty.alexander/.anyenv/envs/goenv/bin"
+
+#############################################################################
 # golang stuff
 #############################################################################
 export GOPATH="${HOME}/.gopath"
 export GOBIN="${GOPATH}/bin"
-export GOROOT="${GOENV_ROOT}/versions/$(goenv version | cut -f1 -d' ')"
+export GOROOT="${GOENV_ROOT}/versions/$($GOENV_BIN/goenv version | cut -f1 -d' ')"
 export GOENV_DISABLE_GOPATH=1
 
 #############################################################################

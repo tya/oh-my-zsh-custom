@@ -6,11 +6,6 @@
 #
 #############################################################################
 # load twilio settings (don't want to keep these in public github)
-for f ($HOME/.twilio/*.zsh(N)); do
+for f ($HOME/.segment/*.zsh(N)); do
   source $f
 done
-
-# load owl settings
-if command -V "$OWL/bin/owl" &> /dev/null; then
-  eval "$("$OWL/bin/owl" init -)"
-fi
