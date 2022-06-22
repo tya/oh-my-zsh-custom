@@ -86,7 +86,6 @@ alias rmorig="find . -type f -name \"*.orig\" -delete"
 alias gf="git fetch --all"
 alias gs="git st"
 alias gl="git log -n 5"
-alias gh="hub browse $@"
 
 #############################################################################
 # httpie aliases

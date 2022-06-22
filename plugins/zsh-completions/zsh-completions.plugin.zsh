@@ -6,3 +6,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # https://github.com/zsh-users/zsh-completions#oh-my-zsh
 autoload -U compinit && compinit
+
+# add aws-okta completion
+source <(aws-okta completion zsh)
