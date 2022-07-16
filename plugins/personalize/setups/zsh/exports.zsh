@@ -47,3 +47,5 @@ export GOENV_DISABLE_GOPATH=1
 # AWS SAM stuff
 #############################################################################
 export SAM_CLI_TELEMETRY=0
+export AWS_SESSION_TTL=12h
+export AWS_ASSUME_ROLE_TTL=12h
