@@ -5,10 +5,6 @@
 # This file loads sendgrid aliases
 #
 #############################################################################
-alias sg='cd $GOPATH/src/github.com/sendgrid'
-alias sgo='cd $GOPATH/src/github.com/sendgrid'
-alias gosg='cd $GOPATH/src/github.com/sendgrid'
 
-# branch shortcut
-alias sgb="git checkout -b EVE-$1"
-
+# open buildkite page from withing a repo
+alias sgbk="open https://buildkite.com/sendgrid/$(basename $(git config --get remote.origin.url) .git)"
