@@ -11,15 +11,16 @@
 #   do this before homebrew
 #############################################################################
 if command -v anyenv &> /dev/null ; then
-    eval "$(anyenv init -)"
+  eval "$(anyenv init -)"
 fi
 
 #############################################################################
 # command-not-found
 #############################################################################
+
 if brew command command-not-found-init > /dev/null 2>&1; then
-    export HB_CNF_HANDLER="$(brew --prefix)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-    if [ -f "$HB_CNF_HANDLER" ]; then
-      source "$HB_CNF_HANDLER";
-    fi
+  export HOMEBREW_COMMAND_NOT_FOUND_HANDLER="$(brew --repository)/Library/Homebrew/command-not-found/handler.sh"
+  if [ -f "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER" ]; then
+    source "$HOMEBREW_COMMAND_NOT_FOUND_HANDLER";
+  fi
 fi

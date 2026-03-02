@@ -9,20 +9,16 @@
 #############################################################################
 # path setup
 #############################################################################
+if [ -d /opt/homebrew/opt/tpm/share/tpm ]; then
+    export PATH=/opt/homebrew/opt/tpm/share/tpm:${PATH}
+fi
+
 if [ -d /usr/local/sbin ]; then
     export PATH=/usr/local/sbin:${PATH}
 fi
 
 if [ -d ${HOME}/bin ]; then
     export PATH=${HOME}/bin:${PATH}
-fi
-
-#############################################################################
-# tmux tpm install
-#############################################################################
-if [ ! -d ~/.tmux/plugins/tpm ]; then
-   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
-   && ~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
 #############################################################################
