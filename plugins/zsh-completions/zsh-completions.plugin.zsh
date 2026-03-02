@@ -12,6 +12,3 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # https://github.com/zsh-users/zsh-completions#oh-my-zsh
 #autoload -Uz compinit && compinit
-
-# add aws-okta completion
-source <(aws-okta completion zsh)
